@@ -64,6 +64,21 @@
 
 ![](https://github.com/wuwenwenIT/assets/raw/master/image-20210117171211406.png)
 
+<<<<<<< HEAD
+=======
+#### 4. Java虚拟机
+
+![01](https://github.com/wuwenwenIT/assets/raw/master/image-20210117195758828.png)
+
+
+
+
+
+
+
+
+
+>>>>>>> c9e0d57 (02)
 
 # 二、对象和类
 
