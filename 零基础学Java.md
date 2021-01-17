@@ -58,7 +58,11 @@
 >
 >   ![](https://github.com/wuwenwenIT/Typora_textbook/raw/master/assets/1.png)
 >
->   
+>   我真是棒棒哒：）
+
+##### git的基本理论
+
+![](https://github.com/wuwenwenIT/assets/raw/master/image-20210117171211406.png)
 
 
 # 二、对象和类
