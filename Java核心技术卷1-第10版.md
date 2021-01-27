@@ -374,8 +374,6 @@
   ```
 
 <<<<<<< HEAD
-  
-=======
 <<<<<<< HEAD
   
 =======
@@ -385,6 +383,11 @@
 <<<<<<< HEAD
   
 =======
+<<<<<<< HEAD
+  
+=======
+=======
+>>>>>>> 14bc474 (2021/1/27)
   - 数组定义格式：int [ ]  arr ; //推荐
 
   - 数组长度：arr.length; 二维数组.length;//表示二维数组的行
@@ -413,10 +416,13 @@
     - 空指针异常
       - NullPointerException
       - 数组引用没有指向对象，却在操作对象中的元素 
+<<<<<<< HEAD
 >>>>>>> 09b4aa0 (2021/1/22 JavaNotes)
 >>>>>>> 3fda1a3 (20211/1/22)
 >>>>>>> 6295977 (2021/1/22)
 >>>>>>> fc2b77d (2021/1/22)
+=======
+>>>>>>> 14bc474 (2021/1/27)
 
 ---
 
@@ -424,6 +430,7 @@
 
 ## 4. 对象与类
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -466,6 +473,8 @@
 <<<<<<< HEAD
 =======
 =======
+=======
+>>>>>>> 14bc474 (2021/1/27)
 - 面向对象程序设计概述
 
   - 面向对象程序设计 OOP
@@ -546,6 +555,16 @@
 - 静态域与静态方法
 
   - 静态域 static
+<<<<<<< HEAD
+=======
+
+    >- 静态方法和静态对象可以调用，不能调用非静态的对象和方法
+    >- static 的优点：1. 对对象的共享数据提供单独空间的存储，节省空间，没有必要为每一个对象都存储一份；2. 可以直接被类名调用，不用在堆内存创建对象。
+    >- static 的弊端：1.访问出现局限性，静态虽好，只能访问静态成员。
+    >
+    >
+
+>>>>>>> 14bc474 (2021/1/27)
   - 静态方法，是没有this参数的，静态方法是不能向对象实施操作的方法，没有隐式的参数。
 
 - 方法参数
@@ -581,6 +600,15 @@
 
   - 如果参数是引用数据类型，例如 arr[] 指向堆区的数组的地址
 
+<<<<<<< HEAD
+=======
+  - 局部代码块（存在于方法中，控制变量的生命周期（作用域））
+
+  - 构造代码块（提取构造方法中的共性，每次创建对象都会执行，并且在构造方法执行前执行）
+
+  - 静态代码块（随着类的加载而加载，只加载一次）
+
+>>>>>>> 14bc474 (2021/1/27)
 - 对象构造
 
   - 重载：如果多个方法有相同的名字、不同的参数，便产生了重载。
@@ -603,8 +631,39 @@
 - 包 package
 
   - 包中存放着许多Java类
+<<<<<<< HEAD
   - ![image-20210122173616667](Java核心技术卷1-第10版.assets/image-20210122173616667.png)
   - 
+=======
+
+  - ![image-20210122173616667](Java核心技术卷1-第10版.assets/image-20210122173616667.png)
+
+  - s.setName(String);
+
+  - s.getName( );
+
+  - this
+
+    ```java
+    public void setName(String name){
+        this.name = name;
+    }
+    
+    public String getName(){
+        return name;
+    }
+    
+    public void setAge(int age){
+        this.age = age;
+    }
+    
+    public int getAge(){
+        return age;
+    }
+    ```
+
+    
+>>>>>>> 14bc474 (2021/1/27)
 
 - 类路径
 
@@ -623,6 +682,7 @@
 ## 5. 继承
 
 - 类、超类和子类
+<<<<<<< HEAD
 - Object：所有类的超类
 - 泛型数组列表
 - 对象包装器与自动装箱
@@ -634,6 +694,58 @@
 >>>>>>> 3fda1a3 (20211/1/22)
 >>>>>>> 6295977 (2021/1/22)
 >>>>>>> fc2b77d (2021/1/22)
+=======
+
+  - 继承：多个类由共同的成员变量和方法，让多个类继承一个父类
+
+  - ```
+    public LOL ExtendsDemo{
+         ...
+    }
+    ```
+
+  - 继承的特点：
+
+    - Java只支持单继承，不支持多继承
+    - 一个类只能有一个父类，不可以有多个父类
+    - class SubDemo extends Demo{} //ok
+    - class SubDemo extends Demo1,Demo2{} // error!
+    - Java支持多层继承，继承体系
+    - class A{}
+    - class B extends A{}
+    - class C extends B{}
+
+  - 子类只能继承父类的非私有成员，就近原则，super.name父类的name，this.name
+
+  - 方法的重写 vs 方法的重载
+
+    - 重载：一个类中有多个重名的方法，但是其参数不一样，参数的个数、类型、顺序
+    - 重写：在子父类中，方法完全一样，子类重写了父类的方法（覆盖），只能调用子类的方法，要用父类的方法需要super
+
+  - abstract：关键字，用于修饰方法和类
+
+    - 抽象方法：不同类的方法是相似的，但是具体内容不一样，我们只能抽取他的声明，没有具体方法的方法就是抽象方法。
+    - 一个类继承了它的抽象类，需要重写它所有的抽象方法。，否则这个类只能为抽象类。
+    - 抽象方法只能在抽象类里，abstract
+    - abstract不能与final和private共存，抽象类有构造函数，可以没有抽象方法
+
+- Object：所有类的超类
+
+- 泛型数组列表
+
+- 对象包装器与自动装箱
+
+- 参数数量可变的方法
+
+- 枚举类
+
+- 反射
+
+- 继承的设计技巧
+
+  - 继承是多态的前提
+  - 缺点：高耦合性，开发的原则是高内聚和低耦合；
+>>>>>>> 14bc474 (2021/1/27)
 
 ---
 
@@ -641,9 +753,229 @@
 
 ## 6. 接口
 
+<<<<<<< HEAD
 
 
 
+=======
+- 接口
+  
+  - 接口（interface）是一个比抽象类更抽象的类，接口里所有的方法都是抽象方法，接口和类的关系是实现，implements
+  
+  - 格式：
+  
+    ​                interface 接口名{
+  
+    ​                 } 
+  
+  - 类与类：继承关系，单一继承，多层继承；
+  
+  - 类与接口：实现关系，多实现
+  
+  - 接口与接口：继承关系，多继承
+  
+  - List接口：有序，可以重复；Set接口：无序，不能重复；
+  
+  - 降低程序的耦合性，可以实现模块的开发。
+  
+  - 接口只有常量，只能有抽象方法，方法默认public abstract，没有构造方法
+  
+  - API (Application Programming Interface)，应用程序编程接口
+  - Java API 就是 JDK中提供的各种功能的Java类
+  - String 类
+    - 字符串的内容是存储在方法区的常量池里的，为了方便字符串的重复使用
+    - 
+  
+- 接口示例
+
+- I/O流：读数据（输入流）FileWriter，写数据（输出流）
+
+  ```java
+  package com.wuwenwen07;
+  
+  import java.io.FileWriter;
+  import java.io.IOException;
+  
+  public class FileWriteTest01 {
+  	public static void main(String[] args) throws IOException {
+  		//创建输出流对象
+  		FileWriter fw = new FileWriter(".\\myFile.txt");//或者直接myFile.txt
+  		fw.write("你好");
+          fw.flush();//刷新
+  	}
+  }
+  //文件myFile在工作台
+  ```
+
+  ![image-20210124083005063](Java核心技术卷1-第10版.assets/image-20210124083005063.png)
+
+  
+
+  ```java
+  package com.wuwenwen07;
+  
+  
+  import java.io.FileReader;
+  import java.io.IOException;
+  
+  public class FileReaderTest03 {
+  	public static void main(String[] args) throws IOException {
+  		FileReader fr = new FileReader("fr.txt");
+  		
+  		//防止中文乱码
+  		//*.txt 的格式是ANSI
+  		
+  		// 一次读写一个字符数组
+  		char[] chs = new char[1024];
+  		int len; // 用于存储读到的字符个数
+  		while((len=fr.read(chs))!=-1) {
+  			System.out.println("len = "+len);
+  			System.out.print(new String(chs,0,len));
+  			
+  		}
+  	}
+  }
+  
+  ```
+
+  - 缓存流
+
+  ```java
+  package com.wuwenwen07;
+  
+  import java.io.BufferedWriter;
+  import java.io.FileWriter;
+  import java.io.IOException;
+  
+  public class BufferedWriterTest01 {
+  	public static void main(String[] args) throws IOException {
+  		//创建缓冲流
+  		BufferedWriter bw = new BufferedWriter(new FileWriter("bw.txt"));
+  		
+  		bw.write("love you!");
+  		
+  		bw.flush();
+  		
+  		bw.close();
+  	}
+  }
+  
+  ```
+
+  ```java
+  package com.wuwenwen07;
+  
+  import java.io.BufferedReader;
+  import java.io.FileReader;
+  import java.io.IOException;
+  
+  public class BufferedWriterTest01 {
+  	public static void main(String[] args) throws IOException {
+  		//创建缓冲流
+  		/*BufferedWriter bw = new BufferedWriter(new FileWriter("bw.txt"));
+  		
+  		bw.write("love you!");
+  		
+  		bw.flush();
+  		
+  		bw.close();*/
+  		
+  		BufferedReader br = new BufferedReader(new FileReader("Copy.java"));
+  
+  		int ch;
+  		while((ch=br.read())!=-1) {
+  			System.out.print((char)ch);
+  		}
+  		
+  		//释放资源
+  		br.close();
+  
+  	}
+  }
+  
+  ```
+
+  ```java
+  package com.wuwenwen07;
+  
+  import java.io.BufferedReader;
+  import java.io.FileReader;
+  import java.io.IOException;
+  
+  public class BufferedWriterTest01 {
+  	public static void main(String[] args) throws IOException {
+  		//创建缓冲流
+  		/*BufferedWriter bw = new BufferedWriter(new FileWriter("bw.txt"));
+  		
+  		bw.write("love you!");
+  		
+  		bw.flush();
+  		
+  		bw.close();*/
+  		
+  		BufferedReader br = new BufferedReader(new FileReader("Copy.java"));
+  
+  		/*int ch;
+  		while((ch=br.read())!=-1) {
+  			System.out.print((char)ch);
+  		}*/
+  		
+  		char[] ch = new char[1024];
+  		int len;
+  		while((len=br.read(ch))!=-1) {
+  //			System.out.println("len = "+len);
+  			System.out.println(new String(ch,0,len));
+  		}
+  		
+  		//释放资源
+  		br.close();
+  
+  	}
+  }
+  
+  ```
+
+  高效读写数据——FileBufferedWriter、FileBufferedReader
+
+- lambda 表达式
+
+- 内部类
+
+- 代理
+
+- 匿名对象
+
+  - 匿名对象只能调用一次，匿名对象赋值没有意义
+
+- final ：修饰符，可以修饰类、成员方法和成员变量
+
+  - final 修饰的类不能被继承，不能有子类
+  - final修饰的方法不能被重写，修饰的变量是常量，不能被修改，大写
+
+- 多态
+
+  - 子父类的继承关系，方法的重写，父类引用指向子类对象
+
+  - 多态的成员特点：成员变量：编译时看的是左边，运行时也是左边
+
+    ​                                成员方法：编译时看的是左边，运行时是右边
+
+    ​                                静态方法：编译时是左边，运行时也是左边
+
+- 正则表达式：一套规则，用以匹配指定字符串
+
+  ```java
+  boolean flag = qq.matches("[1-9][0-9]{4,14}");
+  ```
+
+- 多态
+
+  ```java
+  Collection c = new ArrayList();//多态，父类引用指向子类对象
+  ```
+
+  
+>>>>>>> 14bc474 (2021/1/27)
 
 ----
 
@@ -651,6 +983,7 @@
 
 ## 7. 异常、断言和日志
 
+<<<<<<< HEAD
 
 
 
@@ -668,6 +1001,84 @@
 
 
 
+=======
+- 处理错误
+
+  - 异常分类
+
+    ![image-20210127160106875](Java核心技术卷1-第10版.assets/image-20210127160106875.png)
+
+  - 异常：代码编译或运行时出错
+
+  - 编译时异常：RuntimeException的子类就是运行时期异常
+
+  - 运行时异常：Exception的子类，编译时必须处理
+
+  - Error：出现的不能够处理的严重问题
+
+  - Exception：可以处理的问题
+
+- 捕获异常
+
+  - 捕获处理：try...catch语句
+
+  - 抛出去：throws IOException，虚拟机处理
+
+    - throws 是处理异常的一种方式，把异常抛出，让处理机处理
+
+    - throw 是制造异常的方式
+
+      ```java
+      throw new RuntimeException("要求不符合类型！");
+      ```
+
+- 使用异常机制的技巧
+
+  - 定义一个自己的异常类：写一个类去继承Exception或者RuntimeException，然后实现多个构造即可。
+
+    ```java
+    public class MyException extends RuntimeException{
+        public MyException(){
+            super();
+        }
+        public MyException(String message){
+            super(message);
+        }
+    }
+    
+    public static void checkScore(int score){
+        if(score<0||score>100){
+            throw new MyException("考试成绩不合法！");
+        }
+        System.out.println("考试成绩符合要求")
+    }
+    ```
+
+    
+
+- 使用断言
+
+- 记录日志
+
+- 调试技巧
+
+---
+
+
+
+## 8. 泛型程序设计
+
+- 为什么要使用泛型程序设计
+- 定义简单泛型类
+  - Java的泛型类似于C++的模板类，但是没有专用的template关键字
+- 泛型方法
+- 类型变量的限定
+- 泛型代码和虚拟机
+- 约束与局限性
+- 泛型类型的继承规则
+- 通配符类型
+- 反射和泛型
+>>>>>>> 14bc474 (2021/1/27)
 
 ---
 
@@ -675,11 +1086,76 @@
 
 ## 9. 集合
 
+<<<<<<< HEAD
 
 
 
 
 
+=======
+- Java集合框架
+
+  - 常见的类由Vector,Stack,Hashtable,BitSet等
+  - ArrayList<String> arr = new ArrayList<String>();
+
+- 具体的集合
+
+- 映射
+
+  - Map的两种遍历方式：
+
+    ```java
+    //第一种遍历方式
+    public class MapDemo{
+        public static void main(String[] args){
+            //创建Map对象
+            Map<String,String> map = new HashMap<String,String>();
+            //添加映射关系
+            map.put("A","1");
+            map.put("B","2");
+            map.put("C","3");
+            //遍历Map对象
+            Set<String> keys = map.keySet();
+            for(String key:keys){
+                String value = map.get(key);
+                System.out.println("key="+key+"value="+value);
+            }
+      		     
+        }
+    }
+    ```
+
+    ```java
+    //第二种遍历方式
+    public class MapDemo{
+        public static void main(String[] args){
+            //创建Map对象
+            Map<String,String> map = new HashMap<String,String>();
+            //添加映射关系
+            map.put("A","1");
+            map.put("B","2");
+            map.put("C","3");
+            //遍历Map对象
+            Set<Map.Entry<String,String>> entrys = map.entrySet();
+            for(Map.Entry<String,String> entry:entrys){
+                String key = entry.getKey();
+                String value = entry.getValue();
+                
+                System.out.println("key="+key+"value="+value);
+            }
+      		     
+        }
+    }
+    ```
+
+    
+
+- 视图与包装器
+
+- 算法
+
+- 遗留的集合
+>>>>>>> 14bc474 (2021/1/27)
 
 ----
 
@@ -687,11 +1163,35 @@
 
 ## 10. 图形程序设计
 
+<<<<<<< HEAD
 
 
 
 
 
+=======
+- Swing 概述
+
+  - Swing是基于AWT架构之上的，指的是被绘制的用户界面类。
+
+    ![image-20210127164728641](Java核心技术卷1-第10版.assets/image-20210127164728641.png)
+
+    
+
+- 创建框架
+
+- 框架定位
+
+- 在组件中显示信息
+
+- 处理2D图形
+
+- 使用颜色
+
+- 文本使用特殊字体
+
+- 显示图像
+>>>>>>> 14bc474 (2021/1/27)
 
 ---
 
@@ -699,11 +1199,25 @@
 
 ## 11. 事件处理
 
+<<<<<<< HEAD
 
 
 
 
 
+=======
+- 事件处理基础
+
+  ![image-20210127165059852](Java核心技术卷1-第10版.assets/image-20210127165059852.png)
+
+  
+
+- 动作
+
+- 鼠标事件
+
+- AWT事件继承层次
+>>>>>>> 14bc474 (2021/1/27)
 
 ---
 
